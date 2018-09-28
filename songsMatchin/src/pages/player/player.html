@@ -12,7 +12,47 @@
 
 </ion-header>
 
+<!-- <button ion-button full (click)="return()">Return Home</button> -->
 
-<ion-content padding>
+<ion-content class="cards-bg">
+
+    <ion-card>
+
+      <img src="PATH_IMG"/>
+
+      <ion-card-content>
+        <ion-card-title>
+          Title Song
+        </ion-card-title>
+        <p>
+          Artist/Album
+        </p>
+      </ion-card-content>
+
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='thumbs-down'></ion-icon>
+            Dislike
+          </button>
+        </ion-col>
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='star'></ion-icon>
+            SuperLike
+          </button>
+        </ion-col>
+        <ion-col text-right>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='thumbs-up'></ion-icon>
+            Like
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+
+
+
 
 </ion-content>

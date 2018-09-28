@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomePage } from './../home/home';
 import { NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -19,6 +20,10 @@ export class PlayerPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlayerPage');
+  }
+
+  return(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

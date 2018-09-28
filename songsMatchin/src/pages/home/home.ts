@@ -9,9 +9,7 @@ import { PlayerPage } from './../player/player';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-
   }
-
 
   start(){
     this.navCtrl.setRoot(PlayerPage);
