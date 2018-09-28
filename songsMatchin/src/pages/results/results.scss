@@ -1,0 +1,19 @@
+page-results {
+
+}
+
+#matches{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+#matches img{
+  width:25%;
+  height:25%;
+  border-radius: 50%;
+  margin:5px!important;
+  box-sizing: content-box;
+  border: 5px solid rgb(78, 167, 250);
+  box-shadow: 2px 2px 2px gray;
+}
