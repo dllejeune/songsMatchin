@@ -5,21 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>PlayerPage</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-<!-- <button ion-button full (click)="return()">Return Home</button> -->
 
-<ion-content class="cards-bg">
+<!-- <ion-content padding>
+</ion-content> -->
 
+
+
+<ion-content>
+    <button ion-button full (click)="return()">Return Home</button>
+    <p>Nombre de titres restants : {{ titleLeft }}</p>
     <ion-card>
-
       <img src="PATH_IMG"/>
-
       <ion-card-content>
         <ion-card-title>
           Title Song
@@ -51,8 +52,4 @@
       </ion-row>
 
     </ion-card>
-
-
-
-
 </ion-content>

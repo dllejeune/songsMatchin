@@ -15,6 +15,8 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class PlayerPage {
 
+  public titleLeft: number = 20;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
