@@ -1,0 +1,18 @@
+{
+  "name": "resources-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "middleware.js",
+  "dependencies": {
+    "json-server": "^0.14.0",
+    "jsonwebtoken": "^8.3.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "json-server ./data.json --middlewares middleware.js -p 5050 -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

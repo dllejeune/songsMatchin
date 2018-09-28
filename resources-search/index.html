@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+
+    <script>
+        DZ.init({
+            appId: '862b78b85c5b92d9bd1369460a71ce95',
+            channelUrl: 'http://example/channel.html'
+        });
+        DZ.ready(function (sdk_options) {
+            console.log('DZ SDK is ready', sdk_options);
+        });
+
+        fetch('https://api.deezer.com/playlist/1549683151/tracks').then(res => console.log(res))
+    </script>
+</body>
+
+</html>
