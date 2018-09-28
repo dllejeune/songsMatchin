@@ -1,44 +1,64 @@
-import { Component } from '@angular/core';
-import { HomePage } from './../home/home';
-import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the PlayerPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ApiPlayerService } from "./api-player-service";
+import { Component } from "@angular/core";
+import { HomePage } from "./../home/home";
+import { NavController, NavParams } from "ionic-angular";
+import { Track } from "./models/tracks.model";
 
 @Component({
-  selector: 'page-player',
-  templateUrl: 'player.html',
+  selector: "page-player",
+  templateUrl: "player.html"
 })
 export class PlayerPage {
-
   public titleLeft: number = 20;
+  public tracks;
+  public currentTrack: any = {};
+  public currentTrackNumber: number = 3;
+  swicthing = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private playerService: ApiPlayerService
+  ) {
+    this.playerService.getTracks()
+                      .then(elt => this.tracks = elt)
+                      .then(elt => this.updateCurrentTrack());
+  }
+
+  updateCurrentTrack() {
+    this.currentTrack = this.tracks[this.currentTrackNumber];
+    console.log(this.currentTrack.previewUrl);
+  }
+
+  nextTrack(){
+    this.swicthing = true;
+    this.currentTrackNumber ++;
+    this.updateCurrentTrack();
+
+    setTimeout( ()=> this.swicthing = false, 300)
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PlayerPage');
+    console.log("ionViewDidLoad PlayerPage");
   }
 
-  like(){
-      console.log("Like !");
+  like() {
+    this.nextTrack();
   }
 
-  superLike(){
+  superLike() {
+    this.nextTrack();
+
     console.log("Super Like !");
   }
 
-  disLike(){
+  disLike() {
+    this.nextTrack();
+
     console.log("Dislike !");
   }
 
-
-  return(){
+  goBack() {
     this.navCtrl.setRoot(HomePage);
   }
-
 }

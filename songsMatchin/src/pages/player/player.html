@@ -17,39 +17,48 @@
 
 
 <ion-content>
-    <button ion-button full (click)="return()">Return Home</button>
-    <p>Nombre de titres restants : {{ titleLeft }}</p>
-    <ion-card>
-      <img src="PATH_IMG"/>
-      <ion-card-content>
-        <ion-card-title>
-          Title Song
-        </ion-card-title>
-        <p>
-          Artist/Album
-        </p>
-      </ion-card-content>
+  <button ion-button full (click)="goBack()">Back Home</button>
+  <p>Nombre de titres restants : {{ titleLeft }}</p>
+  <ion-card>
+    <img src="{{ currentTrack.imageUrl }}" />
 
-      <ion-row no-padding>
-        <ion-col>
-          <button ion-button clear small color="danger" icon-start (click)="disLike()">
-            <ion-icon name='thumbs-down'></ion-icon>
-            Dislike
-          </button>
-        </ion-col>
-        <ion-col text-center>
-          <button ion-button clear small color="danger" icon-start (click)="superLike()">
-            <ion-icon name='star'></ion-icon>
-            SuperLike
-          </button>
-        </ion-col>
-        <ion-col text-right>
-          <button ion-button clear small color="danger" icon-start (click)="like()">
-            <ion-icon name='thumbs-up'></ion-icon>
-            Like
-          </button>
-        </ion-col>
-      </ion-row>
+    <div *ngIf="!swicthing">
 
-    </ion-card>
+      <audio autoplay>
+        <source *ngIf="currentTrack.previewUrl" [src]="currentTrack.previewUrl" type="audio/mp3" />
+      </audio>
+
+    </div>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{ currentTrack.title }}
+      </ion-card-title>
+      <p>
+        {{ currentTrack.artist }} / {{ currentTrack.album }}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start (click)="disLike()">
+          <ion-icon name='thumbs-down'></ion-icon>
+          Dislike
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="danger" icon-start (click)="superLike()">
+          <ion-icon name='star'></ion-icon>
+          SuperLike
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start (click)="like()">
+          <ion-icon name='thumbs-up'></ion-icon>
+          Like
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 </ion-content>
