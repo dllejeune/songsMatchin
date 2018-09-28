@@ -22,6 +22,19 @@ export class PlayerPage {
     console.log('ionViewDidLoad PlayerPage');
   }
 
+  like(){
+      console.log("Like !");
+  }
+
+  superLike(){
+    console.log("Super Like !");
+  }
+
+  disLike(){
+    console.log("Dislike !");
+  }
+
+
   return(){
     this.navCtrl.setRoot(HomePage);
   }
