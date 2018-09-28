@@ -1,3 +1,4 @@
+import { ResultsPage } from './../pages/results/results';
 import { PlayerPage } from './../pages/player/player';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     HomePage,
-    PlayerPage
+    PlayerPage,
+    ResultsPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    PlayerPage
+    PlayerPage,
+    ResultsPage
   ],
   providers: [
     StatusBar,
