@@ -30,13 +30,11 @@ export class PlayerPage {
   }
 
   updateCurrentTrack() {
-    console.log("je passe par la");
     if(this.currentTrackNumber < this.tracks.length){
       this.currentTrack = this.tracks[this.currentTrackNumber];
       this.tracksLeft --;
     }
     else{
-      console.log("je passe aussi par la");
       this.navCtrl.setRoot(ResultsPage);
     }
   }
@@ -58,13 +56,11 @@ export class PlayerPage {
 
   superLike() {
     this.nextTrack();
-
     console.log("Super Like !");
   }
 
   disLike() {
     this.nextTrack();
-
     console.log("Dislike !");
   }
 

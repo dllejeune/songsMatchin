@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ResultsPage page.
@@ -22,8 +23,10 @@ export class ResultsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultsPage');
+  }
 
-
+  goBack() {
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
