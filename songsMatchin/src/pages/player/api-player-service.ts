@@ -42,8 +42,4 @@ export class ApiPlayerService {
         new Track(id, title, artist.name, album.title, album.cover_big, preview)
     );
   }
-
-  public getTracksData(): Track[] {
-    return this.tracks;
-  }
 }

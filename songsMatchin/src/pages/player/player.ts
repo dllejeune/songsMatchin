@@ -1,3 +1,4 @@
+import { ResultsPage } from './../results/results';
 import { ApiPlayerService } from "./api-player-service";
 import { Component } from "@angular/core";
 import { HomePage } from "./../home/home";
@@ -9,10 +10,10 @@ import { Track } from "./models/tracks.model";
   templateUrl: "player.html"
 })
 export class PlayerPage {
-  public titleLeft: number = 20;
   public tracks;
+  public tracksLeft: number;
   public currentTrack: any = {};
-  public currentTrackNumber: number = 3;
+  public currentTrackNumber: number = 0;
   swicthing = false;
 
   constructor(
@@ -22,19 +23,28 @@ export class PlayerPage {
   ) {
     this.playerService.getTracks()
                       .then(elt => this.tracks = elt)
-                      .then(elt => this.updateCurrentTrack());
+                      .then(() => {
+                        this.updateCurrentTrack()
+                        this.tracksLeft = this.tracks.length;
+                      });
   }
 
   updateCurrentTrack() {
-    this.currentTrack = this.tracks[this.currentTrackNumber];
-    console.log(this.currentTrack.previewUrl);
+    console.log("je passe par la");
+    if(this.currentTrackNumber < this.tracks.length){
+      this.currentTrack = this.tracks[this.currentTrackNumber];
+      this.tracksLeft --;
+    }
+    else{
+      console.log("je passe aussi par la");
+      this.navCtrl.setRoot(ResultsPage);
+    }
   }
 
   nextTrack(){
     this.swicthing = true;
     this.currentTrackNumber ++;
     this.updateCurrentTrack();
-
     setTimeout( ()=> this.swicthing = false, 300)
   }
 

@@ -17,8 +17,6 @@
 
 
 <ion-content>
-  <button ion-button full (click)="goBack()">Back Home</button>
-  <p>Nombre de titres restants : {{ titleLeft }}</p>
   <ion-card>
     <img src="{{ currentTrack.imageUrl }}" />
 
@@ -37,6 +35,8 @@
       <p>
         {{ currentTrack.artist }} / {{ currentTrack.album }}
       </p>
+      <p>Nombre de titres restants : {{ tracksLeft }}</p>
+
     </ion-card-content>
 
     <ion-row no-padding>
